@@ -14,7 +14,7 @@
       <tbody>
       <tr *ngFor="let item of data">
         <td>{{item.title}}</td>
-        <td>{{item.authors}}</td>
+        <td *ngFor="let author of item.authors">{{author.lastName}}, {{author.firstName}}</td>
         <td>{{item.isbn}}</td>
       </tr>
 
