@@ -12,7 +12,7 @@ export class BookServiceService {
   // ========== Attributes ===========
   // =================================
 
-  URL = 'http://localhost:3081/book/allbooks';
+  URL = 'http://localhost:3081/book/getallbooks';
 
 
   // =================================
