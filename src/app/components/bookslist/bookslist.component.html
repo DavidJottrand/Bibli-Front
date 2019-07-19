@@ -3,32 +3,48 @@
     <h3>Books List</h3>
   </div>
   <div class="card-body">
-    <table class="table table-striped">
-      <thead class="thead-dark">
-      <tr>
-        <th>Cover</th>
-        <th>Title</th>
-        <th>Authors</th>
-        <th>Subject</th>
-        <th>Resume</th>
-        <th>Year of parution</th>
-        <th>ISBN</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr *ngFor="let item of data">
-        <td><img [src]=item.pictureUrl
-                [width]=width></td>
-        <td>{{item.title}}</td>
-        <td ><div *ngFor="let author of item.authors">{{author.lastName}}, {{author.firstName}}</div></td>
-        <td>{{item.subject}}</td>
-        <td>{{item.resume}}</td>
-        <td>{{item.parutionDate}}</td>
-        <td>{{item.isbn}}</td>
-      </tr>
 
-      </tbody>
-    </table>
+    <div class="row">
+      <div class="card align-items-center" style="width:400px; margin: 5px"
+           *ngFor='let item of data'>
+        <img class="card-img-top center"
+             [src]='item.pictureUrl' [title]='item.title'
+             [style.width.px]='"200"'>
+        <div class="card-body text-center">
+          <h4 class="card-title">{{ item.title }}</h4>
+          <h2 class="card-text"><div *ngFor="let author of item.authors">{{author.lastName}} {{author.firstName}}</div></h2>
+          <a class="btn btn-primary" > Show Details </a>
+        </div>
+      </div>
+    </div>
+
+
+<!--    <table class="table table-striped">-->
+<!--      <thead class="thead-dark">-->
+<!--      <tr>-->
+<!--        <th>Cover</th>-->
+<!--        <th>Title</th>-->
+<!--        <th>Authors</th>-->
+<!--        <th>Subject</th>-->
+<!--        <th>Resume</th>-->
+<!--        <th>Year of parution</th>-->
+<!--        <th>ISBN</th>-->
+<!--      </tr>-->
+<!--      </thead>-->
+<!--      <tbody>-->
+<!--      <tr *ngFor="let item of data">-->
+<!--        <td><img [src]=item.pictureUrl-->
+<!--                [width]=width></td>-->
+<!--        <td>{{item.title}}</td>-->
+<!--        <td ><div *ngFor="let author of item.authors">{{author.lastName}}, {{author.firstName}}</div></td>-->
+<!--        <td>{{item.subject}}</td>-->
+<!--        <td>{{item.resume}}</td>-->
+<!--        <td>{{item.parutionDate}}</td>-->
+<!--        <td>{{item.isbn}}</td>-->
+<!--      </tr>-->
+
+<!--      </tbody>-->
+<!--    </table>-->
   </div>
 
 </div>
