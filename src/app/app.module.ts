@@ -11,6 +11,7 @@ import { HttpClientModule} from '@angular/common/http';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { HeaderComponent } from './components/header/header.component';
+import { BookDetailsComponent } from './components/book-details/book-details.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HeaderComponent } from './components/header/header.component';
     BookslistComponent,
     WelcomeComponent,
     NotFoundComponent,
-    HeaderComponent
+    HeaderComponent,
+    BookDetailsComponent
   ],
   imports: [
     BrowserModule,

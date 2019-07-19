@@ -13,7 +13,7 @@
         <div class="card-body text-center">
           <h4 class="card-title">{{ item.title }}</h4>
           <h2 class="card-text"><div *ngFor="let author of item.authors">{{author.lastName}} {{author.firstName}}</div></h2>
-          <a class="btn btn-primary" > Show Details </a>
+          <a class="btn btn-primary" [routerLink]="['/bookdetails', item.isbn]"> Show Details </a>
         </div>
       </div>
     </div>

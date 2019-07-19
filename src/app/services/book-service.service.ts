@@ -12,7 +12,7 @@ export class BookServiceService {
   // ========== Attributes ===========
   // =================================
 
-  URL = 'http://localhost:3081/book/getallbooks';
+  URL = 'http://localhost:3081/book/';
 
 
   // =================================
@@ -32,7 +32,11 @@ export class BookServiceService {
   // =================================
 
   public getAllBooks(): Observable<Book[]> {
-    return this.client.get<Book[]>(this.URL);
+    return this.client.get<Book[]>(this.URL + "getallbooks");
+  }
+
+  public findBookByIsbn() : Observable<Book> {
+    return this.client.get<Book>(this.URL + "findbookbyisbn");
   }
 
 }
