@@ -10,6 +10,10 @@ export interface Book {
   title: string;
   isbn: string;
   authors: Author[];
+  subject: string;
+  resume: string;
+  pictureUrl: string;
+  parutionDate: number;
 
 
   // =================================

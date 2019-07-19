@@ -16,7 +16,8 @@ export class BookslistComponent implements OnInit {
   // =================================
 
   data: Book[];
-  authors: string
+  width: number = 80;
+
 
   // =================================
   // ========= Constructors ==========

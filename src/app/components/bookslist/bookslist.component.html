@@ -3,18 +3,27 @@
     <h3>Books List</h3>
   </div>
   <div class="card-body">
-    <table class="table">
-      <thead>
+    <table class="table table-striped">
+      <thead class="thead-dark">
       <tr>
+        <th>Cover</th>
         <th>Title</th>
         <th>Authors</th>
+        <th>Subject</th>
+        <th>Resume</th>
+        <th>Year of parution</th>
         <th>ISBN</th>
       </tr>
       </thead>
       <tbody>
       <tr *ngFor="let item of data">
+        <td><img [src]=item.pictureUrl
+                [width]=width></td>
         <td>{{item.title}}</td>
-        <td *ngFor="let author of item.authors">{{author.lastName}}, {{author.firstName}}</td>
+        <td ><div *ngFor="let author of item.authors">{{author.lastName}}, {{author.firstName}}</div></td>
+        <td>{{item.subject}}</td>
+        <td>{{item.resume}}</td>
+        <td>{{item.parutionDate}}</td>
         <td>{{item.isbn}}</td>
       </tr>
 
