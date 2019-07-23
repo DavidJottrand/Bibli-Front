@@ -1,23 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import {BookServiceService} from '../../services/book-service.service';
-import {Book} from '../../domain/book';
-import {createBrowserLoggingCallback} from '@angular-devkit/build-angular/src/browser';
-import {log} from 'util';
 
 @Component({
-  selector: 'app-bookslist',
-  templateUrl: './bookslist.component.html',
-  styleUrls: ['./bookslist.component.scss']
+  selector: 'app-research',
+  templateUrl: './research.component.html',
+  styleUrls: ['./research.component.scss']
 })
-export class BookslistComponent implements OnInit {
+export class ResearchComponent implements OnInit {
 
   // =================================
   // ========== Attributes ===========
   // =================================
 
-  data: Book[];
-  width: number = 80;
-
+  researchTitle: string;
 
   // =================================
   // ========= Constructors ==========
@@ -37,13 +32,8 @@ export class BookslistComponent implements OnInit {
 
 
   ngOnInit() {
-    this.service.getAllBooks().subscribe(
-      resp => this.data = resp,
-      error => log('Error : ' + error)
-    );
-
-
-
   }
+
+
 
 }

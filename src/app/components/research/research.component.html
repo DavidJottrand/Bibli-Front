@@ -1,0 +1,9 @@
+<h1>Research</h1>
+
+<div class="form-group">
+  <label for="researchTitle">Title</label>
+  <input type="text" class="form-control" name="researchTitle" id="researchTitle" aria-describedby="helpId" placeholder="">
+  <small id="helpId" class="form-text text-muted">Enter the title of the book you are looking for or one of its words.</small>
+  <br>
+  <a class="btn btn-primary" [routerLink]="['/resultbytitle', researchTitle]">Search</a>
+</div>

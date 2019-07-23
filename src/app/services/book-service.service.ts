@@ -35,8 +35,8 @@ export class BookServiceService {
     return this.client.get<Book[]>(this.URL + "getallbooks");
   }
 
-  public findBookByIsbn() : Observable<Book> {
-    return this.client.get<Book>(this.URL + "findbookbyisbn");
+  public findBookByIsbn(isbn: string) : Observable<Book> {
+    return this.client.get<Book>(this.URL + "findbookbyisbn" + "?isbn=" + isbn);
   }
 
 }

@@ -1,1 +1,85 @@
 <h1>Book Details</h1>
+
+<div class="card offset-1 col-md-10">
+  <div class="card-header bg-info text-white">
+    <h2>Details for {{ book?.title }} </h2>
+  </div>
+  <div class="card-body">
+    <div class='row'>
+      <div class='col-md-6'>
+        <div class='row'>
+          <div class='col-md-3'>Title :</div>
+          <div class='col-md-6'>{{book?.title}}</div>
+        </div>
+        <hr>
+        <div class='row'>
+          <div class='col-md-3'>Author(s):</div>
+          <div class='col-md-6'><div *ngFor="let author of book?.authors">{{author?.lastName}} {{author?.firstName}}</div></div>
+        </div>
+        <hr>
+        <div class='row'>
+          <div class='col-md-3'>Resume :</div>
+          <div class='col-md-6'>{{book?.resume}}</div>
+        </div>
+        <hr>
+        <div class='row'>
+          <div class='col-md-3'>Subject :</div>
+          <div class='col-md-6'>{{book?.subject}}</div>
+        </div>
+        <hr>
+        <div class='row'>
+          <div class='col-md-3'>ISBN :</div>
+          <div class='col-md-6'>{{book?.isbn}}</div>
+        </div>
+        <hr>
+
+
+      </div>
+      <div class='col-md-6 align-items-center'>
+        <img class='center img-responsive'
+             [style.height.px]=height
+             [style.margin.px]='2'
+             [src]='book?.pictureUrl'
+             [title]='book?.title'/>
+      </div>
+    </div>
+    <div class="row">
+      <div class='card col-md-10'>
+        <a name="" id="" class="btn btn-primary"
+           (click)="addToCart()" routerLinkActive="router-link-active"
+           role="button" >Add to cart</a>
+      </div>
+    </div>
+  </div>
+  <div class="card-footer text-muted">
+    <a class='btn btn-lg' (click)='onBack()' style='width:100px'>
+      <i class="fa fa-angle-double-left"></i> Back
+    </a>
+  </div>
+</div>
+
+
+
+<!--<table class="table">-->
+<!--  <thead>-->
+<!--  <tr>-->
+<!--    <th>Cover</th>-->
+<!--    <th>Title</th>-->
+<!--    <th>Author</th>-->
+<!--    <th>Subject</th>-->
+<!--    <th>Resume</th>-->
+<!--    <th>Isbn</th>-->
+<!--  </tr>-->
+<!--  </thead>-->
+<!--  <tbody>-->
+<!--  <tr>-->
+<!--    <td scope="row"><img [src]=book.pictureUrl [height]=height></td>-->
+<!--    <td>{{book.title}}</td>-->
+<!--    <td><div *ngFor="let author of book.authors">{{author.lastName}} {{author.firstName}}</div></td>-->
+<!--    <td>{{book.subject}}</td>-->
+<!--    <td>{{book.resume}}</td>-->
+<!--    <td>{{book.isbn}}</td>-->
+<!--  </tr>-->
+
+<!--  </tbody>-->
+<!--</table>-->

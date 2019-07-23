@@ -1,29 +1,28 @@
 import { Component, OnInit } from '@angular/core';
-import {BookServiceService} from '../../services/book-service.service';
 import {Book} from '../../domain/book';
-import {createBrowserLoggingCallback} from '@angular-devkit/build-angular/src/browser';
-import {log} from 'util';
+import {CartService} from '../../services/cart.service';
 
 @Component({
-  selector: 'app-bookslist',
-  templateUrl: './bookslist.component.html',
-  styleUrls: ['./bookslist.component.scss']
+  selector: 'app-cart',
+  templateUrl: './cart.component.html',
+  styleUrls: ['./cart.component.scss']
 })
-export class BookslistComponent implements OnInit {
+export class CartComponent implements OnInit {
 
   // =================================
   // ========== Attributes ===========
   // =================================
 
-  data: Book[];
-  width: number = 80;
+  data: Book[] ;
+  totalAmount: number;
+
 
 
   // =================================
   // ========= Constructors ==========
   // =================================
 
-  constructor(private service: BookServiceService) { }
+  constructor(private service: CartService) { }
 
 
   // =================================
@@ -37,13 +36,13 @@ export class BookslistComponent implements OnInit {
 
 
   ngOnInit() {
-    this.service.getAllBooks().subscribe(
-      resp => this.data = resp,
-      error => log('Error : ' + error)
-    );
-
-
+    this.data = this.service.getCartBooks();
+    this.totalAmount = this.service.getCartTotalAmount();
 
   }
 
+  order(){
+    console.log("Your order has been processed.");
+    console.log(JSON.stringify(this.data));
+  }
 }

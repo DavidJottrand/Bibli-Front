@@ -12,6 +12,9 @@ import { WelcomeComponent } from './components/welcome/welcome.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { HeaderComponent } from './components/header/header.component';
 import { BookDetailsComponent } from './components/book-details/book-details.component';
+import { ResearchComponent } from './components/research/research.component';
+import { ResultByTitleComponent } from './components/result-by-title/result-by-title.component';
+import { CartComponent } from './components/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import { BookDetailsComponent } from './components/book-details/book-details.com
     WelcomeComponent,
     NotFoundComponent,
     HeaderComponent,
-    BookDetailsComponent
+    BookDetailsComponent,
+    ResearchComponent,
+    ResultByTitleComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
